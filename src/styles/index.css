@@ -1,0 +1,12 @@
+@import './components/components.css';
+
+body {
+	margin: 0;
+	background-color: #333333;
+}
+
+.sticky {
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0;
+}

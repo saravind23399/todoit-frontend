@@ -5,9 +5,15 @@ import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider,
 } from '@material-ui/pickers';
-import { Check, ArrowBack } from '@material-ui/icons';
+import { ArrowBack } from '@material-ui/icons';
+import NextFab from '../../common/NextFab';
 
-export default function CreateWhenToDoPanel({ navigationHandle, stepIndex }) {
+export default function CreateWhenToDoPanel({
+  inputChangeHandle,
+  navigationHandle,
+  stepIndex,
+  date,
+}) {
   const handleNextClick = () => {
     navigationHandle(stepIndex + 1);
   };
@@ -24,15 +30,15 @@ export default function CreateWhenToDoPanel({ navigationHandle, stepIndex }) {
         margin="normal"
         id="date-picker"
         label="Pick a Date"
+        value={date}
+        onChange={inputChangeHandle}
         KeyboardButtonProps={{
           'aria-label': 'change date',
         }}
       />
       <Grid container direction="row-reverse" spacing={2}>
         <Box m={2}>
-          <Fab color="primary" onClick={handleNextClick}>
-            <Check></Check>
-          </Fab>
+          <NextFab clickHandler={handleNextClick} />
         </Box>
         <Box m={2}>
           <Fab color="primary" onClick={handleBackClick}>

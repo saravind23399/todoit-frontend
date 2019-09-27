@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Hidden,
-} from '@material-ui/core';
+import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 
 export default function SideBarItem({
   actionHandle,
@@ -16,9 +11,7 @@ export default function SideBarItem({
       <ListItemIcon>
         <IconComponent />
       </ListItemIcon>
-      <Hidden mdDown>
-        <ListItemText primary={primaryText} />
-      </Hidden>
+      <ListItemText primary={primaryText} />
     </ListItem>
   );
 }

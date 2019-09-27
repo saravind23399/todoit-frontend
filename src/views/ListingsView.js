@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Typography, Box, Grid, Divider } from '@material-ui/core';
+import { Typography, Box, Grid } from '@material-ui/core';
 import SideBar from '../components/nav/sidebar/SideBar';
 import ToDo from '../models/ToDo';
 import NewToDoDialog from '../components/ToDo/newToDo/NewToDoDialog';
@@ -91,10 +91,10 @@ export default class LisitingsView extends Component {
         />
         <Box m={5}>
           <Grid container spacing={5}>
-            <Grid item xs={2}>
+            <Grid item xs={12} md={3}>
               <SideBar handleMenuClick={this.handleMenuClick} />
             </Grid>
-            <Grid item xs={10}>
+            <Grid item xs={12} md={9}>
               <Typography paragraph color="textPrimary">
                 <Box m={2}>
                   <Typography variant="h2" componennt="h2" align="right">
@@ -103,9 +103,6 @@ export default class LisitingsView extends Component {
                   <Typography variant="h6" componennt="h6" align="right">
                     {moment(new Date()).format('DD MMMM')}
                   </Typography>
-                  <Box mt={2}>
-                    <Divider />
-                  </Box>
                 </Box>
                 <Box m={5}>
                   <ToDoDisplayGrid
